@@ -13,7 +13,15 @@ def home():
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.reply_to(message, "Hello! Ami 30 din cholbo! ✅")
+    bot.reply_to(message, "Hello! Ami sob somoy cholbo! Site Code pathan, jemon: 1809")
+
+@bot.message_handler(func=lambda m: True)
+def handle_all(message):
+    code = message.text.strip()
+    if code == "1809":
+        bot.reply_to(message, "1809 | DHK_W1809 | DHK1809\nSavar Bazar\nBanglalink Site - Found!")
+    else:
+        bot.reply_to(message, f"{code} search cholche...\nSite Code: {code}")
 
 def run_bot():
     bot.infinity_polling()
